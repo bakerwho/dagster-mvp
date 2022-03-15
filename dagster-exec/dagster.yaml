@@ -1,0 +1,31 @@
+# Dagster Instance configuration
+# Docs: https://docs.dagster.io/deployment/dagster-instance
+# Requires ENV variables to be set in rcmv2/.envrc
+
+# and this config grabs the directory from an environment variable
+run_storage:
+  module: dagster.core.storage.runs
+  class: SqliteRunStorage
+  config:
+    base_dir: ./logs/runs/
+      # if using ENV variable, uncomment the following
+      # env: SQLITE_RUN_STORAGE_BASE_DIR
+
+event_log_storage:
+  module: dagster.core.storage.event_log
+  class: SqliteEventLogStorage
+  config:
+    base_dir: ./logs/events
+      # if using ENV variable, uncomment the following
+      # env: SQLITE_EVENT_LOG_STORAGE_BASE_DIR
+
+schedule_storage:
+  module: dagster.core.storage.schedules
+  class: SqliteScheduleStorage
+  config:
+    base_dir: ./logs/schedules
+      # if using ENV variable, uncomment the following
+      # env: SQLITE_SCHEDULE_STORAGE_DIRECTORY
+
+telemetry:
+  enabled: false
