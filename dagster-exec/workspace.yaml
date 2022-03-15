@@ -1,4 +1,4 @@
 load_from:
   - python_file:
-      relative_path: "/Users/aabir/Documents/mm-code/data.ml/rcmv2/dagstertest/pipeline_1.py"
+      relative_path: "/Users/aabir/Documents/mm-code/dagstermvp/pipeline_1.py"
       attribute: repo_1

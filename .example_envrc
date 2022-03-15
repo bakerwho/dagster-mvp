@@ -1,0 +1,23 @@
+# Globals
+export BASEDIR="./"
+
+# Dagster
+# DAGSTER_HOME should contain dagster.yaml and workspace.yaml
+export DAGSTER_HOME="/path/to/dagstermvp/dagster-exec"
+
+# AWS
+export AWS_ACCESS_KEY_ID="REDACTED"
+export AWS_SECRET_ACCESS_KEY="REDACTED"
+export AWS_DEFAULT_REGION="us-east-1"
+
+export S3_BUCKET="REDACTED"
+
+# Snowflake credentials
+export SNOWFLAKE_ACCOUNT="REDACTED"
+export SNOWFLAKE_WAREHOUSE="REPORTING"
+export SNOWFLAKE_DATABASE="ANALYTICS"
+export SNOWFLAKE_SCHEMA="EVENTS"
+export SNOWFLAKE_ROLE="REPORTER"
+export SNOWFLAKE_USERNAME="REDACTED"
+export SNOWFLAKE_PASSWORD="REDACTED"
+
