@@ -51,7 +51,6 @@ def clean_string(context, sent_norm):
         return re.sub(r'[^\w\s]', r' ', x)
     return remove_punc(sent_norm, **hyperparams)
 
-
 class CustomIOManager(dagster.IOManager):
     def __init__(self, basedir, run_id):
         self.basedir = basedir
@@ -97,15 +96,15 @@ clean_string_job = clean_string_graph.to_job(
                    'paths': paths,
                    'custom_io_manager': customiomanager},
     config={'ops':{'get_string': {'config': {'data_key': '1'}},
-                   'normalize_string': {'config': {'norm':'upper', 'force_error':False}},
-                   'clean_string': {'config': {'hyperparams': {'dim':10, 'reg':0.01}}}
-                   },
-            'resources':{
-                'connection': {'config': {'credentials': 'HORRIBLE_PASSWORD'}},
-                'paths': {'config': {'basedir': './'}},
-                'custom_io_manager': {'config': {'basedir': './history'}}
-                }
+           'normalize_string': {'config': {'norm':'upper', 'force_error':False}},
+           'clean_string': {'config': {'hyperparams': {'dim':10, 'reg':0.01}}}
+           },
+        'resources':{
+            'connection': {'config': {'credentials': 'HORRIBLE_PASSWORD'}},
+            'paths': {'config': {'basedir': './'}},
+            'custom_io_manager': {'config': {'basedir': './history'}}
             }
+        }
 )
 
 @dagster.schedule(job=clean_string_job, cron_schedule="0/1 * * * *", execution_timezone="US/Pacific")
@@ -119,4 +118,3 @@ def every_minute_string_job_schedule(context):
 @dagster.repository
 def repo_1():
     return [clean_string_job, every_minute_string_job_schedule]
-

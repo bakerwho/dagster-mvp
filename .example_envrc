@@ -3,7 +3,7 @@ export BASEDIR="./"
 
 # Dagster
 # DAGSTER_HOME should contain dagster.yaml and workspace.yaml
-export DAGSTER_HOME="/path/to/dagstermvp/dagster-exec"
+export DAGSTER_HOME="/path/to/dagster-mvp/dagster-exec"
 
 # AWS
 export AWS_ACCESS_KEY_ID="REDACTED"
@@ -20,4 +20,3 @@ export SNOWFLAKE_SCHEMA="EVENTS"
 export SNOWFLAKE_ROLE="REPORTER"
 export SNOWFLAKE_USERNAME="REDACTED"
 export SNOWFLAKE_PASSWORD="REDACTED"
-
