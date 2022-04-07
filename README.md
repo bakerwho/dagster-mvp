@@ -12,7 +12,9 @@ We build the pipeline as a Dagster `graph` object that chains these 3 `op`s. We 
 
 ### Clone this repo:
 
-```git clone https://github.com/bakerwho/dagster-mvp```
+```
+git clone https://github.com/bakerwho/dagster-mvp
+```
 
 ### Run this code:
 
@@ -21,7 +23,9 @@ We build the pipeline as a Dagster `graph` object that chains these 3 `op`s. We 
 3. Run using CLI:
     `dagster job execute clean_string_job`
 4. Run the Dagit UI:
+
 ```
 dagit
 ```
+
     You can now run the job `clean_string_job` from the UI. You can even edit the run configuration in-browser.
