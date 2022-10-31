@@ -1,5 +1,5 @@
 import dagster
-from dagster import In, Out
+from dagster import In, Out, RunRequest
 import os
 from os.path import join
 import re
@@ -111,8 +111,8 @@ clean_string_job = clean_string_graph.to_job(
 def every_minute_string_job_schedule(context):
     scheduled_date = context.scheduled_execution_time.strftime("%Y-%m-%d %H:%M:%S")
     return RunRequest(
-        job=clean_string_job,
-        tags={"date": scheduled_date},
+        job_name="clean_string_job",
+        tags={"date": scheduled_date}
     )
 
 @dagster.repository
