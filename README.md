@@ -1,7 +1,7 @@
 # dagster-mvp
 A deployable, configurable, testable Minimum Viable Product for ML using [Dagster](https://dagster.io/).
 
-Dagster is a tool for building and orchestrating data pipelines. It works well in production too. While learning this tool, I found myself hunting for an simple example of a runnable Dagster pipeline. I couldn't find one, so I build it myself.
+Dagster is a tool for building and orchestrating data pipelines. It works well in production too. While learning this tool, I found myself hunting for an simple example of a runnable Dagster pipeline. I couldn't find one, so I built it myself.
 
 This simple pipeline has 3 steps, each of which is written as a Dagster `op`:
 1. select 1 of 2 sentences from a dict using a key
